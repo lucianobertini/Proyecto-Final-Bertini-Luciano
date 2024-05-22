@@ -1,0 +1,9 @@
+Nombre del caso de prueba: Creación de Blog
+Objetivo: Verificar que un usuario pueda crear un nuevo blog en la plataforma.
+Pasos:
+1. Ingresar al sistema con Usuario y Contraseña.
+2. Navegar a la sección de Blogs, Crear Blog.
+3. Completar el formulario de creación de blogs con un título, subtítulo, cuerpo del blog y una imagen (si es requerida).
+4. Enviar el formulario haciendo clic en el botón Crear Blog.
+Resultado esperado: El sistema debe confirmar la creación exitosa del blog.
+Datos requeridos: Acceso al sistema con credenciales válidas y datos válidos para completar el formulario.

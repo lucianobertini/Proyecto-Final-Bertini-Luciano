@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}Detalles del Perfil{% endblock %}
+
+{% block content %}
+<h1>Perfil de {{ profile.user.username }}</h1>
+{% if profile.photo %}
+    <img src="{{ profile.photo.url }}" alt="Profile Photo" width="150" height="150">
+{% else %}
+    <p>No hay foto de perfil</p>
+{% endif %}
+<p>Descripción: {{ profile.description }}</p>
+<a class="green-button" href="{% url 'profile_list' %}">Volver a la lista de perfiles</a>
+{% endblock %}

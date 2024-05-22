@@ -1,0 +1,39 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}{{ blog.title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ blog.title }}</h1>
+    <h2>{{ blog.subtitle }}</h2>
+    {% if blog.image %}
+        <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
+    {% endif %}
+    <p>{{ blog.body }}</p>
+    <p>Autor: {{ blog.author.username }}</p>
+    <p>Fecha: {{ blog.date }}</p>
+
+    <!-- Formulario de comentarios -->
+    <form method="post" action="{% url 'page_detail' blog.id %}">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="form-group">
+            <textarea class="form-control" id="id_content" name="content" rows="3" placeholder="Escribe tu comentario aquí"></textarea>
+        </div>
+        <button class="green-button" type="submit">Comentar</button>
+    </form>
+
+    <h2>Comentarios:</h2>
+    <ul>
+        {% for comment in comments %}
+            <li>
+                <p>{{ comment.content }}</p>
+                <p>Por: {{ comment.author.username }} el {{ comment.created_at }}</p>
+            </li>
+        {% empty %}
+            <p>No hay comentarios aún.</p>
+        {% endfor %}
+    </ul>
+
+    <a class="green-button" href="{% url 'blog_list' %}">Volver al listado de blogs</a>
+{% endblock %}

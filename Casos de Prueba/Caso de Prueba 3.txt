@@ -1,0 +1,9 @@
+Nombre del caso de prueba: Envío de Mensaje
+Objetivo: Verificar que un usuario pueda enviar un mensaje a otro usuario en la aplicación de mensajería.
+Pasos:
+1. Ingresar a seccion de enviar mensaje.
+2. Seleccionar el contacto al que se desea enviar el mensaje.
+3. Escribir el mensaje en el campo de texto del chat.
+4. Enviar el mensaje haciendo clic en el botón "Enviar".
+Resultado esperado: El mensaje debe enviarse correctamente al destinatario y aparecer en la conversación.
+Datos requeridos: Acceso a la aplicación de mensajería con credenciales válidas y un contacto válido para enviar el mensaje.

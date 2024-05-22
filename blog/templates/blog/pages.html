@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}Blogs{% endblock %}
+
+{% block content %}
+<h1>Blogs</h1>
+<a class="new-blog-link" href="{% url 'create_blog' %}">Crear nuevo blog</a>
+<a class="new-blog-link" href="{% url 'blog_list' %}">Ver listado de blogs</a>
+{% endblock %}

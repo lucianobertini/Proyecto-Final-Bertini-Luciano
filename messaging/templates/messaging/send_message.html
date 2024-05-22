@@ -1,0 +1,31 @@
+{% extends 'blog/base.html' %}
+{% load i18n %}
+
+{% block title %}Enviar mensaje{% endblock %}
+
+{% block content %}
+<div class="send-message-container">
+    <h2>{% trans "Enviar mensaje" %}</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_recipient">{% trans "Destinatario" %}:</label>
+            {{ form.recipient }}
+        </div>
+        <div class="form-group">
+            <label for="id_subject">{% trans "Asunto" %}:</label>
+            {{ form.subject }}
+        </div>
+        <div class="form-group">
+            <label for="id_body">{% trans "Mensaje" %}:</label>
+            {{ form.body }}
+        </div>
+        <button class="green-button" type="submit">{% trans "Enviar" %}</button>
+    </form>
+</div>
+<style>
+    .form-group {
+        margin-bottom: 20px;
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}Lista de Perfiles{% endblock %}
+
+{% block content %}
+<h1>Lista de Perfiles</h1>
+<ul>
+    {% for profile in profiles %}
+        <li>
+            <h2>{{ profile.user.username }}</h2>
+            <a class="green-button" href="{% url 'profile_detail' profile.user.id %}">Ver detalles</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

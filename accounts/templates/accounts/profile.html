@@ -1,0 +1,7 @@
+{% extends 'blog/base.html' %}
+{% block title %}Perfil{% endblock %}
+{% block content %}
+<h1>Perfil</h1>
+<a class="new-blog-link" href="{% url 'edit_profile' %}">Editar perfil</a>
+<a class="new-blog-link" href="{% url 'profile_list' %}">Ver listado de perfiles</a>
+{% endblock %}

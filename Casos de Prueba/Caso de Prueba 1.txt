@@ -1,0 +1,9 @@
+Nombre del caso de prueba: Iniciar Sesión
+Objetivo: Verificar que un usuario pueda iniciar sesión correctamente en el sistema.
+Pasos:
+1. Abrir el navegador web.
+2. Navegar a la página de inicio de sesión del sistema.
+3. Ingresar el nombre de usuario y la contraseña correctos.
+4. Hacer clic en el botón "Iniciar Sesión".
+Resultado esperado: El sistema debe redirigir al usuario a su página de inicio, con perfil, bandeja de entrada y enviar mensaje desbloqueados en la NavBar.
+Datos requeridos: Nombre de usuario y contraseña válidos.

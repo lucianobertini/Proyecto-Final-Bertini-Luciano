@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}Inbox{% endblock %}
+
+{% block content %}
+    <h2>Inbox</h2>
+    <ul>
+        {% for message in messages %}
+            <li>
+                <strong>{{ message.sender.username }}</strong>: {{ message.subject }}
+                <p>{{ message.body }}</p>
+                <small>{{ message.timestamp }}</small>
+                <table>
+                    <tr>
+                        <td>
+                            <form method="get" action="{% url 'send_message' %}?recipient={{ message.sender.username }}">
+                                <button class="green-button" type="submit">Responder</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form method="post" action="{% url 'delete_message' message.id %}">
+                                {% csrf_token %}
+                                <button class="red-button" type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <h1>{{ user.username }}</h1>
+    {% if profile.photo %}
+        <img src="{{ profile.photo.url }}" alt="Profile Photo">
+    {% endif %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="photo" class="file-input" id="id_photo">
+        <label for="id_photo" class="choose-photo green-button">Elegir foto</label>
+        <br><br>
+        <textarea name="description" rows="4" cols="50">{{ profile.description }}</textarea>
+        <br><br>
+        <button type="submit" class="green-button">Guardar</button> 
+    </form>
+{% endblock %}
